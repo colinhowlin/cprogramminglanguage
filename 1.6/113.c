@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /* Exercise 1-13: Program to print a histogram of
-   the lengths of words in its input up to 10 letters */
+   the lengths of words in its input */
 
 int main(){
     
@@ -69,12 +69,21 @@ int main(){
         printf("\n");
     }
 
+    // get maximum
+    int max = 0;
+    for (i = 0; i < 10; ++i){
+        if (word_length[i] > max)
+            max = word_length[i];
+    }
+
     // print vertical histogram
     printf("\n*********************\n");
     printf("Vertical Histogram\n");
     printf("*********************\n");
 
-    for (i = 10; i > 0; --i){
+    for (i = max; i > 0; --i){
+        printf("%2d | ", i);
+
         for (j = 0; j < 10; ++j){
             if (word_length[j] >= i){
                 printf("*");
@@ -85,6 +94,7 @@ int main(){
         }
         printf("\n");
     }
+    printf("     ");
     for (i = 0; i < 10; ++i)
         if (i == 9)
             printf("10+ ");

@@ -6,20 +6,22 @@
 int main() {
     
     int c, i;
-    int chars[127];
+    int chars[26];
 
     // Initialise array values
-    for (i = 0; i < 127; ++i)
+    for (i = 0; i < 26; ++i)
         chars[i] = 0;
 
     while ((c = getchar()) != EOF){
-        
-        ++chars[c];
+        if (c >= 'a' && c <= 'z')
+            ++chars[c - 'a'];
+        else if (c >= 'A' && c <= 'Z')
+            ++chars[c - 'A'];
     }
-
+   
     printf("\n");
 
-    for (i = 0; i < 127; ++i)
+    for (i = 0; i < 26; ++i)
         printf("%d ", chars[i]);
 
     printf("\n");
