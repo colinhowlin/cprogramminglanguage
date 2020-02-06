@@ -16,7 +16,6 @@ int main(){
 
     max = 0;
     while ((len = getline2(line, MAXLINE)) > 0){
-        //printf("\nLen: %d\n", len);
         if (len > max) {
             max = len;
             real_len = len;
@@ -46,7 +45,6 @@ int getline2(char s[], int lim){
         ++i;
     }
     s[i] = '\0';
-    // printf("\ni = %d\n", i);
     return i;
 }
 
